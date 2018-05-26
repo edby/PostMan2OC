@@ -1,0 +1,664 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15B5A9AC20B809D8006476B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5A9AB20B809D8006476B1 /* AppDelegate.m */; };
+		15B5A9AF20B809D8006476B1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5A9AE20B809D8006476B1 /* ViewController.m */; };
+		15B5A9B220B809D8006476B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15B5A9B020B809D8006476B1 /* Main.storyboard */; };
+		15B5A9B420B809DA006476B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15B5A9B320B809DA006476B1 /* Assets.xcassets */; };
+		15B5A9B720B809DA006476B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15B5A9B520B809DA006476B1 /* LaunchScreen.storyboard */; };
+		15B5A9BA20B809DB006476B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5A9B920B809DB006476B1 /* main.m */; };
+		15B5A9C420B809DB006476B1 /* PostMan2OCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5A9C320B809DB006476B1 /* PostMan2OCTests.m */; };
+		15B5A9CF20B809DB006476B1 /* PostMan2OCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5A9CE20B809DB006476B1 /* PostMan2OCUITests.m */; };
+		15B5A9F420B81158006476B1 /* PostManEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5A9DD20B81158006476B1 /* PostManEvent.m */; };
+		15B5A9F520B81158006476B1 /* PostManQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5A9DE20B81158006476B1 /* PostManQuery.m */; };
+		15B5A9F620B81158006476B1 /* PostManItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5A9E120B81158006476B1 /* PostManItem.m */; };
+		15B5A9F720B81158006476B1 /* PostManRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5A9E220B81158006476B1 /* PostManRequest.m */; };
+		15B5A9F820B81158006476B1 /* PostManBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5A9E420B81158006476B1 /* PostManBody.m */; };
+		15B5A9F920B81158006476B1 /* PostManPostMan.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5A9E520B81158006476B1 /* PostManPostMan.m */; };
+		15B5A9FA20B81158006476B1 /* PostManUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5A9E720B81158006476B1 /* PostManUrl.m */; };
+		15B5A9FB20B81158006476B1 /* PostManFormdata.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5A9E820B81158006476B1 /* PostManFormdata.m */; };
+		15B5A9FC20B81158006476B1 /* PostManScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5A9EA20B81158006476B1 /* PostManScript.m */; };
+		15B5A9FD20B81158006476B1 /* PostManInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5A9ED20B81158006476B1 /* PostManInfo.m */; };
+		15B5A9FE20B81158006476B1 /* PostManHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5A9EE20B81158006476B1 /* PostManHeader.m */; };
+		15B5AA0020B811C3006476B1 /* postMan.json in Resources */ = {isa = PBXBuildFile; fileRef = 15B5A9FF20B811C3006476B1 /* postMan.json */; };
+		15B5AA0320B94A18006476B1 /* textTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5AA0220B94A18006476B1 /* textTableViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		15B5A9C020B809DB006476B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15B5A99F20B809D8006476B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15B5A9A620B809D8006476B1;
+			remoteInfo = PostMan2OC;
+		};
+		15B5A9CB20B809DB006476B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15B5A99F20B809D8006476B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15B5A9A620B809D8006476B1;
+			remoteInfo = PostMan2OC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		15B5A9A720B809D8006476B1 /* PostMan2OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostMan2OC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		15B5A9AA20B809D8006476B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		15B5A9AB20B809D8006476B1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		15B5A9AD20B809D8006476B1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		15B5A9AE20B809D8006476B1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		15B5A9B120B809D8006476B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		15B5A9B320B809DA006476B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		15B5A9B620B809DA006476B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		15B5A9B820B809DB006476B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15B5A9B920B809DB006476B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		15B5A9BF20B809DB006476B1 /* PostMan2OCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PostMan2OCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		15B5A9C320B809DB006476B1 /* PostMan2OCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostMan2OCTests.m; sourceTree = "<group>"; };
+		15B5A9C520B809DB006476B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15B5A9CA20B809DB006476B1 /* PostMan2OCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PostMan2OCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		15B5A9CE20B809DB006476B1 /* PostMan2OCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostMan2OCUITests.m; sourceTree = "<group>"; };
+		15B5A9D020B809DB006476B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15B5A9DD20B81158006476B1 /* PostManEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostManEvent.m; sourceTree = "<group>"; };
+		15B5A9DE20B81158006476B1 /* PostManQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostManQuery.m; sourceTree = "<group>"; };
+		15B5A9DF20B81158006476B1 /* PostManHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostManHeader.h; sourceTree = "<group>"; };
+		15B5A9E020B81158006476B1 /* PostManInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostManInfo.h; sourceTree = "<group>"; };
+		15B5A9E120B81158006476B1 /* PostManItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostManItem.m; sourceTree = "<group>"; };
+		15B5A9E220B81158006476B1 /* PostManRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostManRequest.m; sourceTree = "<group>"; };
+		15B5A9E320B81158006476B1 /* PostManScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostManScript.h; sourceTree = "<group>"; };
+		15B5A9E420B81158006476B1 /* PostManBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostManBody.m; sourceTree = "<group>"; };
+		15B5A9E520B81158006476B1 /* PostManPostMan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostManPostMan.m; sourceTree = "<group>"; };
+		15B5A9E620B81158006476B1 /* PostManDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostManDataModels.h; sourceTree = "<group>"; };
+		15B5A9E720B81158006476B1 /* PostManUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostManUrl.m; sourceTree = "<group>"; };
+		15B5A9E820B81158006476B1 /* PostManFormdata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostManFormdata.m; sourceTree = "<group>"; };
+		15B5A9E920B81158006476B1 /* PostManRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostManRequest.h; sourceTree = "<group>"; };
+		15B5A9EA20B81158006476B1 /* PostManScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostManScript.m; sourceTree = "<group>"; };
+		15B5A9EB20B81158006476B1 /* PostManBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostManBody.h; sourceTree = "<group>"; };
+		15B5A9EC20B81158006476B1 /* PostManItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostManItem.h; sourceTree = "<group>"; };
+		15B5A9ED20B81158006476B1 /* PostManInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostManInfo.m; sourceTree = "<group>"; };
+		15B5A9EE20B81158006476B1 /* PostManHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostManHeader.m; sourceTree = "<group>"; };
+		15B5A9EF20B81158006476B1 /* PostManQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostManQuery.h; sourceTree = "<group>"; };
+		15B5A9F020B81158006476B1 /* PostManEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostManEvent.h; sourceTree = "<group>"; };
+		15B5A9F120B81158006476B1 /* PostManPostMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostManPostMan.h; sourceTree = "<group>"; };
+		15B5A9F220B81158006476B1 /* PostManUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostManUrl.h; sourceTree = "<group>"; };
+		15B5A9F320B81158006476B1 /* PostManFormdata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostManFormdata.h; sourceTree = "<group>"; };
+		15B5A9FF20B811C3006476B1 /* postMan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = postMan.json; sourceTree = "<group>"; };
+		15B5AA0120B94A18006476B1 /* textTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = textTableViewCell.h; sourceTree = "<group>"; };
+		15B5AA0220B94A18006476B1 /* textTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = textTableViewCell.m; sourceTree = "<group>"; };
+		15B5AA0520B95A57006476B1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		15B5A9A420B809D8006476B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15B5A9BC20B809DB006476B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15B5A9C720B809DB006476B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15B5A99E20B809D8006476B1 = {
+			isa = PBXGroup;
+			children = (
+				15B5A9A920B809D8006476B1 /* PostMan2OC */,
+				15B5A9C220B809DB006476B1 /* PostMan2OCTests */,
+				15B5A9CD20B809DB006476B1 /* PostMan2OCUITests */,
+				15B5A9A820B809D8006476B1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		15B5A9A820B809D8006476B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				15B5A9A720B809D8006476B1 /* PostMan2OC.app */,
+				15B5A9BF20B809DB006476B1 /* PostMan2OCTests.xctest */,
+				15B5A9CA20B809DB006476B1 /* PostMan2OCUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		15B5A9A920B809D8006476B1 /* PostMan2OC */ = {
+			isa = PBXGroup;
+			children = (
+				15B5A9FF20B811C3006476B1 /* postMan.json */,
+				15B5A9DC20B81158006476B1 /* Modles */,
+				15B5A9AA20B809D8006476B1 /* AppDelegate.h */,
+				15B5A9AB20B809D8006476B1 /* AppDelegate.m */,
+				15B5A9AD20B809D8006476B1 /* ViewController.h */,
+				15B5A9AE20B809D8006476B1 /* ViewController.m */,
+				15B5AA0520B95A57006476B1 /* PrefixHeader.pch */,
+				15B5AA0120B94A18006476B1 /* textTableViewCell.h */,
+				15B5AA0220B94A18006476B1 /* textTableViewCell.m */,
+				15B5A9B020B809D8006476B1 /* Main.storyboard */,
+				15B5A9B320B809DA006476B1 /* Assets.xcassets */,
+				15B5A9B520B809DA006476B1 /* LaunchScreen.storyboard */,
+				15B5A9B820B809DB006476B1 /* Info.plist */,
+				15B5A9B920B809DB006476B1 /* main.m */,
+			);
+			path = PostMan2OC;
+			sourceTree = "<group>";
+		};
+		15B5A9C220B809DB006476B1 /* PostMan2OCTests */ = {
+			isa = PBXGroup;
+			children = (
+				15B5A9C320B809DB006476B1 /* PostMan2OCTests.m */,
+				15B5A9C520B809DB006476B1 /* Info.plist */,
+			);
+			path = PostMan2OCTests;
+			sourceTree = "<group>";
+		};
+		15B5A9CD20B809DB006476B1 /* PostMan2OCUITests */ = {
+			isa = PBXGroup;
+			children = (
+				15B5A9CE20B809DB006476B1 /* PostMan2OCUITests.m */,
+				15B5A9D020B809DB006476B1 /* Info.plist */,
+			);
+			path = PostMan2OCUITests;
+			sourceTree = "<group>";
+		};
+		15B5A9DC20B81158006476B1 /* Modles */ = {
+			isa = PBXGroup;
+			children = (
+				15B5A9DD20B81158006476B1 /* PostManEvent.m */,
+				15B5A9DE20B81158006476B1 /* PostManQuery.m */,
+				15B5A9DF20B81158006476B1 /* PostManHeader.h */,
+				15B5A9E020B81158006476B1 /* PostManInfo.h */,
+				15B5A9E120B81158006476B1 /* PostManItem.m */,
+				15B5A9E220B81158006476B1 /* PostManRequest.m */,
+				15B5A9E320B81158006476B1 /* PostManScript.h */,
+				15B5A9E420B81158006476B1 /* PostManBody.m */,
+				15B5A9E520B81158006476B1 /* PostManPostMan.m */,
+				15B5A9E620B81158006476B1 /* PostManDataModels.h */,
+				15B5A9E720B81158006476B1 /* PostManUrl.m */,
+				15B5A9E820B81158006476B1 /* PostManFormdata.m */,
+				15B5A9E920B81158006476B1 /* PostManRequest.h */,
+				15B5A9EA20B81158006476B1 /* PostManScript.m */,
+				15B5A9EB20B81158006476B1 /* PostManBody.h */,
+				15B5A9EC20B81158006476B1 /* PostManItem.h */,
+				15B5A9ED20B81158006476B1 /* PostManInfo.m */,
+				15B5A9EE20B81158006476B1 /* PostManHeader.m */,
+				15B5A9EF20B81158006476B1 /* PostManQuery.h */,
+				15B5A9F020B81158006476B1 /* PostManEvent.h */,
+				15B5A9F120B81158006476B1 /* PostManPostMan.h */,
+				15B5A9F220B81158006476B1 /* PostManUrl.h */,
+				15B5A9F320B81158006476B1 /* PostManFormdata.h */,
+			);
+			path = Modles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		15B5A9A620B809D8006476B1 /* PostMan2OC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15B5A9D320B809DB006476B1 /* Build configuration list for PBXNativeTarget "PostMan2OC" */;
+			buildPhases = (
+				15B5A9A320B809D8006476B1 /* Sources */,
+				15B5A9A420B809D8006476B1 /* Frameworks */,
+				15B5A9A520B809D8006476B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PostMan2OC;
+			productName = PostMan2OC;
+			productReference = 15B5A9A720B809D8006476B1 /* PostMan2OC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		15B5A9BE20B809DB006476B1 /* PostMan2OCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15B5A9D620B809DB006476B1 /* Build configuration list for PBXNativeTarget "PostMan2OCTests" */;
+			buildPhases = (
+				15B5A9BB20B809DB006476B1 /* Sources */,
+				15B5A9BC20B809DB006476B1 /* Frameworks */,
+				15B5A9BD20B809DB006476B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15B5A9C120B809DB006476B1 /* PBXTargetDependency */,
+			);
+			name = PostMan2OCTests;
+			productName = PostMan2OCTests;
+			productReference = 15B5A9BF20B809DB006476B1 /* PostMan2OCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		15B5A9C920B809DB006476B1 /* PostMan2OCUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15B5A9D920B809DB006476B1 /* Build configuration list for PBXNativeTarget "PostMan2OCUITests" */;
+			buildPhases = (
+				15B5A9C620B809DB006476B1 /* Sources */,
+				15B5A9C720B809DB006476B1 /* Frameworks */,
+				15B5A9C820B809DB006476B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15B5A9CC20B809DB006476B1 /* PBXTargetDependency */,
+			);
+			name = PostMan2OCUITests;
+			productName = PostMan2OCUITests;
+			productReference = 15B5A9CA20B809DB006476B1 /* PostMan2OCUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		15B5A99F20B809D8006476B1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = Sat;
+				TargetAttributes = {
+					15B5A9A620B809D8006476B1 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					15B5A9BE20B809DB006476B1 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 15B5A9A620B809D8006476B1;
+					};
+					15B5A9C920B809DB006476B1 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 15B5A9A620B809D8006476B1;
+					};
+				};
+			};
+			buildConfigurationList = 15B5A9A220B809D8006476B1 /* Build configuration list for PBXProject "PostMan2OC" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 15B5A99E20B809D8006476B1;
+			productRefGroup = 15B5A9A820B809D8006476B1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				15B5A9A620B809D8006476B1 /* PostMan2OC */,
+				15B5A9BE20B809DB006476B1 /* PostMan2OCTests */,
+				15B5A9C920B809DB006476B1 /* PostMan2OCUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		15B5A9A520B809D8006476B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15B5A9B720B809DA006476B1 /* LaunchScreen.storyboard in Resources */,
+				15B5A9B420B809DA006476B1 /* Assets.xcassets in Resources */,
+				15B5AA0020B811C3006476B1 /* postMan.json in Resources */,
+				15B5A9B220B809D8006476B1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15B5A9BD20B809DB006476B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15B5A9C820B809DB006476B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		15B5A9A320B809D8006476B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15B5A9F820B81158006476B1 /* PostManBody.m in Sources */,
+				15B5A9AF20B809D8006476B1 /* ViewController.m in Sources */,
+				15B5AA0320B94A18006476B1 /* textTableViewCell.m in Sources */,
+				15B5A9FA20B81158006476B1 /* PostManUrl.m in Sources */,
+				15B5A9F520B81158006476B1 /* PostManQuery.m in Sources */,
+				15B5A9F720B81158006476B1 /* PostManRequest.m in Sources */,
+				15B5A9F420B81158006476B1 /* PostManEvent.m in Sources */,
+				15B5A9BA20B809DB006476B1 /* main.m in Sources */,
+				15B5A9AC20B809D8006476B1 /* AppDelegate.m in Sources */,
+				15B5A9F920B81158006476B1 /* PostManPostMan.m in Sources */,
+				15B5A9FD20B81158006476B1 /* PostManInfo.m in Sources */,
+				15B5A9FC20B81158006476B1 /* PostManScript.m in Sources */,
+				15B5A9FE20B81158006476B1 /* PostManHeader.m in Sources */,
+				15B5A9FB20B81158006476B1 /* PostManFormdata.m in Sources */,
+				15B5A9F620B81158006476B1 /* PostManItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15B5A9BB20B809DB006476B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15B5A9C420B809DB006476B1 /* PostMan2OCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15B5A9C620B809DB006476B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15B5A9CF20B809DB006476B1 /* PostMan2OCUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		15B5A9C120B809DB006476B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15B5A9A620B809D8006476B1 /* PostMan2OC */;
+			targetProxy = 15B5A9C020B809DB006476B1 /* PBXContainerItemProxy */;
+		};
+		15B5A9CC20B809DB006476B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15B5A9A620B809D8006476B1 /* PostMan2OC */;
+			targetProxy = 15B5A9CB20B809DB006476B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		15B5A9B020B809D8006476B1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15B5A9B120B809D8006476B1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		15B5A9B520B809DA006476B1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15B5A9B620B809DA006476B1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		15B5A9D120B809DB006476B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		15B5A9D220B809DB006476B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		15B5A9D420B809DB006476B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PostMan2OC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edby.PostMan2OC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		15B5A9D520B809DB006476B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PostMan2OC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edby.PostMan2OC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		15B5A9D720B809DB006476B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PostMan2OCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edby.PostMan2OCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PostMan2OC.app/PostMan2OC";
+			};
+			name = Debug;
+		};
+		15B5A9D820B809DB006476B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PostMan2OCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edby.PostMan2OCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PostMan2OC.app/PostMan2OC";
+			};
+			name = Release;
+		};
+		15B5A9DA20B809DB006476B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PostMan2OCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edby.PostMan2OCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PostMan2OC;
+			};
+			name = Debug;
+		};
+		15B5A9DB20B809DB006476B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PostMan2OCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edby.PostMan2OCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PostMan2OC;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		15B5A9A220B809D8006476B1 /* Build configuration list for PBXProject "PostMan2OC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15B5A9D120B809DB006476B1 /* Debug */,
+				15B5A9D220B809DB006476B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15B5A9D320B809DB006476B1 /* Build configuration list for PBXNativeTarget "PostMan2OC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15B5A9D420B809DB006476B1 /* Debug */,
+				15B5A9D520B809DB006476B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15B5A9D620B809DB006476B1 /* Build configuration list for PBXNativeTarget "PostMan2OCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15B5A9D720B809DB006476B1 /* Debug */,
+				15B5A9D820B809DB006476B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15B5A9D920B809DB006476B1 /* Build configuration list for PBXNativeTarget "PostMan2OCUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15B5A9DA20B809DB006476B1 /* Debug */,
+				15B5A9DB20B809DB006476B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 15B5A99F20B809D8006476B1 /* Project object */;
+}

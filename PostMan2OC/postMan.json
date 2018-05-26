@@ -1,0 +1,3822 @@
+{
+    "info": {
+        "name": "yoawo2.0",
+        "_postman_id": "70b50928-aee1-bccd-7b1f-05d10c73525a",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+             {
+             "name": "支付",
+             "desc": "",
+             "item": [
+                      {
+                      "name": "1、支付宝Alipay生成订单及sign",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Alipay/get_order?token=&area_name&pay_type&tickets_code&price&pay_from&pay_batch",
+                      "path": [
+                               "Alipay",
+                               "get_order"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "",
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "area_name",
+                                "value": null,
+                                "desc": "地区名称"
+                                },
+                                {
+                                "key": "pay_type",
+                                "value": null,
+                                "desc": "支付类型 1现金充值 2诺券激活 3优惠券 4\b代金券"
+                                },
+                                {
+                                "key": "tickets_code",
+                                "value": null,
+                                "desc": "诺券码或优惠券码或兑换券码"
+                                },
+                                {
+                                "key": "price",
+                                "value": null,
+                                "desc": "充值金额"
+                                },
+                                {
+                                "key": "pay_from",
+                                "value": null,
+                                "desc": "支付客户端  1--ios    2--微信小程序   3--android"
+                                },
+                                {
+                                "key": "pay_batch",
+                                "value": null,
+                                "desc": "诺券是否批量激活   0否 1是"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "name": "2、微信支付生成订单及sign",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/wx/get_order?token=Myiw01x6N8TIyOTAzNTMx&area_id=3&pay_type=1&tickets_code=XXXX-YYYY-BBBB-RRRR&price=1&pay_from=2&pay_batch=0",
+                      "path": [
+                               "wx",
+                               "get_order"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx",
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "area_id",
+                                "value": "3",
+                                "desc": "地区ID"
+                                },
+                                {
+                                "key": "pay_type",
+                                "value": "1",
+                                "desc": "支付类型 1现金充值 2诺券激活 3优惠券 4兑换券"
+                                },
+                                {
+                                "key": "tickets_code",
+                                "value": "XXXX-YYYY-BBBB-RRRR",
+                                "desc": " 诺券码、优惠券码、兑换券码"
+                                },
+                                {
+                                "key": "price",
+                                "value": "1",
+                                "desc": "充值金额"
+                                },
+                                {
+                                "key": "pay_from",
+                                "value": "2",
+                                "desc": "支付客户端  1--ios    2--微信小程序   3--android"
+                                },
+                                {
+                                "key": "pay_batch",
+                                "value": "0",
+                                "desc": "诺券是否批量激活   0否 1是"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "response": [],
+                      "name": "3、微信测试返回签名信息",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "6cbcbb1c-199c-4e08-afdd-ad61b636c7e9",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " * 返回数据说明：",
+                                         " * {",
+                                         "      status:1000,",
+                                         "      data:{",
+                                         "          appid",
+                                         "          noncestr",
+                                         "          package",
+                                         "          partnerid",
+                                         "          prepayid",
+                                         "          timestamp",
+                                         "          sign",
+                                         "      }",
+                                         "   }",
+                                         " */ "
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://app.yoawo.com/api.php/app/Weixin/getOrderSn?pay_from=3&openid",
+                      "path": [
+                               "api.php",
+                               "app",
+                               "Weixin",
+                               "getOrderSn"
+                               ],
+                      "query": [
+                                {
+                                "key": "pay_from",
+                                "value": "3",
+                                "desc": "支付客户端 1--ios  2--微信小程序  3--android"
+                                },
+                                {
+                                "key": "openid",
+                                "value": null,
+                                "desc": "微信小程序支付传入openid"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "app",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "response": [],
+                      "name": "4、支付宝测试返回签名信息",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "584cca12-702a-4be4-adf3-ac15d58bcf82",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " * 返回数据说明：",
+                                         " * {",
+                                         "      status:1000,  状态码",
+                                         "      data:'sdfasfsfkjasfajsdfhjashdfjashfjaskhfjshfjashdfjhj'   签名",
+                                         "   }",
+                                         " */ "
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "http://app.yoawo.com/api.php/app/Alipay/getOrderSn",
+                      "path": [
+                               "api.php",
+                               "app",
+                               "Alipay",
+                               "getOrderSn"
+                               ],
+                      "protocol": "http",
+                      "host": [
+                               "app",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "response": [],
+                      "name": "5、云握2.0全民推广微信支付获取签名",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "4009a3cd-000b-4ec4-9233-cfad63493765",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " * 返回参数说明：",
+                                         " * {",
+                                         "     code:1000,",
+                                         "     msg:'获取签名成功!'，",
+                                         "     data:{",
+                                         "         order_id:11,",
+                                         "         appid:",
+                                         "         noncestr:",
+                                         "         package:",
+                                         "         partnerid:",
+                                         "         prepayid:",
+                                         "         timestamp:",
+                                         "         sign:",
+                                         "     }",
+                                         " }",
+                                         " * ",
+                                         "*/"
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Pay/spread/get_sign?token=&spread_id&pay_from&price&openid&amount&color&invite_user_id&times&invite_timestr",
+                      "path": [
+                               "Pay",
+                               "spread",
+                               "get_sign"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "",
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "spread_id",
+                                "value": null,
+                                "desc": "活动ID"
+                                },
+                                {
+                                "key": "pay_from",
+                                "value": null,
+                                "desc": "支付客户端  1--ios 2--微信小程序 3--android"
+                                },
+                                {
+                                "key": "price",
+                                "value": null,
+                                "desc": "活动价格"
+                                },
+                                {
+                                "key": "openid",
+                                "value": null,
+                                "desc": "小程序支付openid"
+                                },
+                                {
+                                "key": "amount",
+                                "value": null,
+                                "desc": "购买数量"
+                                },
+                                {
+                                "key": "color",
+                                "value": null,
+                                "desc": "购买颜色"
+                                },
+                                {
+                                "key": "invite_user_id",
+                                "value": null,
+                                "desc": "邀请人ID"
+                                },
+                                {
+                                "key": "times",
+                                "value": null,
+                                "desc": "分享邀请时间戳+随机数"
+                                },
+                                {
+                                "key": "invite_timestr",
+                                "value": null,
+                                "desc": "邀请链接中的时间戳"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "response": [],
+                      "name": "6、云握2.0钞票雨微信支付获取签名",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "9c523642-b176-46df-9f6a-e657012cf8b4",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " * 返回参数说明：",
+                                         " * {",
+                                         "      code:1000,",
+                                         "      msg:'获取签名成功!',",
+                                         "      data:{",
+                                         "          appid：",
+                                         "          noncestr：",
+                                         "          package：",
+                                         "          partnerid：",
+                                         "          prepayid：",
+                                         "          timestamp：",
+                                         "          sign：",
+                                         "      }",
+                                         "   }",
+                                         " * ",
+                                         " * ",
+                                         " * ",
+                                         " */ "
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://app.yoawo.com/Pay/coin/get_sign?token&pay_type&price&pay_from&coin_id&openid",
+                      "path": [
+                               "Pay",
+                               "coin",
+                               "get_sign"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null,
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "pay_type",
+                                "value": null,
+                                "desc": "支付类型 1现金充值"
+                                },
+                                {
+                                "key": "price",
+                                "value": null,
+                                "desc": "充值金额 20 50 100 200"
+                                },
+                                {
+                                "key": "pay_from",
+                                "value": null,
+                                "desc": "支付客户端  1--ios  2--微信小程序 3--android"
+                                },
+                                {
+                                "key": "coin_id",
+                                "value": null,
+                                "desc": "钞票雨活动ID"
+                                },
+                                {
+                                "key": "openid",
+                                "value": null,
+                                "desc": "微信小程序支付openid   APP此参数可省略"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "app",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      }
+                      ]
+             },
+             {
+             "name": "全民推广",
+             "desc": "",
+             "item": [
+                      {
+                      "name": "1、保存基本信息",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "http://super.duidui.com/Api/spread_base?token=MyTwQ106L8TE1MjY2MjUzMDAO0O0O&area_name=磁县&seller=tesst&contact_number=13611031466&address=地址&product_name=测试产品&attach_type=0&video=12&gif=123&product_intro=sdfsd&start_at=2018-05-08&stop_at=2018-05-12&product_color=hong&stop_time=15:30&pics&pics_android",
+                      "path": [
+                               "Api",
+                               "spread_base"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "MyTwQ106L8TE1MjY2MjUzMDAO0O0O",
+                                "desc": "商户登录token"
+                                },
+                                {
+                                "key": "area_name",
+                                "value": "磁县",
+                                "desc": "地区名"
+                                },
+                                {
+                                "key": "seller",
+                                "value": "tesst",
+                                "desc": "商家名称"
+                                },
+                                {
+                                "key": "contact_number",
+                                "value": "13611031466",
+                                "desc": "联系电话"
+                                },
+                                {
+                                "key": "address",
+                                "value": "地址",
+                                "desc": "联系地址"
+                                },
+                                {
+                                "key": "product_name",
+                                "value": "测试产品",
+                                "desc": "商品名称"
+                                },
+                                {
+                                "key": "attach_type",
+                                "value": "0",
+                                "desc": "广告类型 0图片 1视频"
+                                },
+                                {
+                                "key": "video",
+                                "value": "12",
+                                "desc": "上传视频"
+                                },
+                                {
+                                "key": "gif",
+                                "value": "123",
+                                "desc": "上传GIF 多个用英文逗号分隔"
+                                },
+                                {
+                                "key": "product_intro",
+                                "value": "sdfsd",
+                                "desc": "商品描述"
+                                },
+                                {
+                                "key": "start_at",
+                                "value": "2018-05-08",
+                                "desc": "开始时间"
+                                },
+                                {
+                                "key": "stop_at",
+                                "value": "2018-05-12",
+                                "desc": "活动截止时间"
+                                },
+                                {
+                                "key": "product_color",
+                                "value": "hong",
+                                "desc": "商品颜色"
+                                },
+                                {
+                                "key": "stop_time",
+                                "value": "15:30"
+                                },
+                                {
+                                "key": "pics",
+                                "value": null,
+                                "desc": "[]图片数组"
+                                },
+                                {
+                                "key": "pics_android",
+                                "value": null,
+                                "desc": "android图片，多个用英文逗号分隔"
+                                }
+                                ],
+                      "protocol": "http",
+                      "host": [
+                               "super",
+                               "duidui",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "name": "2、保存赏金设置",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/spread_reward?token&spread_id&market_price&price&reward_limit&amount_limit&user_obtain&is_buy_qualify&user_share_money&platform_share_money&user_buy_money&platform_buy_money&reward_rate&platform_share_rate&buy_reward_rate&platform_buy_rate&-&muser_share_money&mplatform_share_money&muser_buy_money&mplatform_buy_money",
+                      "path": [
+                               "Api",
+                               "spread_reward"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null,
+                                "desc": "商家登录token"
+                                },
+                                {
+                                "key": "spread_id",
+                                "value": null,
+                                "desc": "活动ID"
+                                },
+                                {
+                                "key": "market_price",
+                                "value": null,
+                                "desc": "市场价"
+                                },
+                                {
+                                "key": "price",
+                                "value": null,
+                                "desc": "活动价格"
+                                },
+                                {
+                                "key": "reward_limit",
+                                "value": null,
+                                "desc": "赏金上限 0 不限制 1 100%   2  200%"
+                                },
+                                {
+                                "key": "amount_limit",
+                                "value": null,
+                                "desc": "数量上限"
+                                },
+                                {
+                                "key": "user_obtain",
+                                "value": null,
+                                "desc": "用户获取赏金方式 0金额 1百分比"
+                                },
+                                {
+                                "key": "is_buy_qualify",
+                                "value": null,
+                                "desc": "消费者购买才能获得推广和邀请资格 0否 1是"
+                                },
+                                {
+                                "key": "user_share_money",
+                                "value": null,
+                                "desc": "不购买仅分享邀请赏金金额"
+                                },
+                                {
+                                "key": "platform_share_money",
+                                "value": null,
+                                "desc": "平台收取不购买仅分享服务费金额"
+                                },
+                                {
+                                "key": "user_buy_money",
+                                "value": null,
+                                "desc": "用户购买分享邀请赏金金额"
+                                },
+                                {
+                                "key": "platform_buy_money",
+                                "value": null,
+                                "desc": "平台收取购买分享服务费金额"
+                                },
+                                {
+                                "key": "reward_rate",
+                                "value": null,
+                                "desc": "不购买仅推广赏金比例"
+                                },
+                                {
+                                "key": "platform_share_rate",
+                                "value": null,
+                                "desc": "不购买平台收取仅分享服务费百分比 默认值 1.6%"
+                                },
+                                {
+                                "key": "buy_reward_rate",
+                                "value": null,
+                                "desc": "购买并推广赏金比例"
+                                },
+                                {
+                                "key": "platform_buy_rate",
+                                "value": null,
+                                "desc": "平台收取购买分享服务费百分比 默认值 2.6%"
+                                },
+                                {
+                                "key": "-",
+                                "value": null
+                                },
+                                {
+                                "key": "muser_share_money",
+                                "value": null,
+                                "desc": "按金额 --不购买仅分享邀请赏金金额"
+                                },
+                                {
+                                "key": "mplatform_share_money",
+                                "value": null,
+                                "desc": "按金额 -- 平台收取不购买仅分享服务费金额"
+                                },
+                                {
+                                "key": "muser_buy_money",
+                                "value": null,
+                                "desc": "按金额 -- 用户购买分享邀请赏金金额"
+                                },
+                                {
+                                "key": "mplatform_buy_money",
+                                "value": null,
+                                "desc": "按金额 -- 平台收取购买分享服务费金额"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "name": "3、提交活动",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/spread_submit?token&spread_id",
+                      "path": [
+                               "Api",
+                               "spread_submit"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null,
+                                "desc": "商家登录token"
+                                },
+                                {
+                                "key": "spread_id",
+                                "value": null,
+                                "desc": "活动ID"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "response": [],
+                      "name": "4、赚赏金 全民推广 活动列表",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "e5377fe9-af9c-436b-a1ba-e62a14521b3f",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " * code:1000,",
+                                         " * msg:'',",
+                                         " * is_store_owner:0  //0不是商家  1是商家",
+                                         " * data:[",
+                                         " * {",
+                                         "      spread_id:1,",
+                                         "      product_name:测试商品名称",
+                                         "      product_intro:简介",
+                                         "      attach_type:0  广告类型 0图片 1视频",
+                                         "      pics:",
+                                         "      video:",
+                                         "      is_self:0  0不是自己的  1是自己的",
+                                         "      market_price 市场价",
+                                         "      price 活动价",
+                                         "    }",
+                                         " * ]",
+                                         " */ "
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/spread_list?token=Myiw01x6N8TIyOTAzNTMx&page=0&rows=10",
+                      "path": [
+                               "Api",
+                               "spread_list"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx",
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "page",
+                                "value": "0",
+                                "desc": "当前页码"
+                                },
+                                {
+                                "key": "rows",
+                                "value": "10",
+                                "desc": "每页显示记录条数"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "response": [],
+                      "name": "5、活动详细",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "00c91bf1-2f32-44c7-8eb4-f8060310c154",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " * code 1000",
+                                         " * msg ",
+                                         " * data: ",
+                                         " * {",
+                                         " *     spread_user_id  活动商家用户ID",
+                                         " *     share_user_id   当前用户ID（分享者或购买者）",
+                                         " *     is_buy_qualify  消费者购买才能获得推广和邀请资格  0否 1是",
+                                         "       spread_id:  活动ID",
+                                         "       pics:[]  图片",
+                                         "       attach_type:  广告类型 0图片 1视频",
+                                         "       video   视频地址",
+                                         "       product_name   商品名称",
+                                         "       seller    商家名称",
+                                         "       contact_number  联系电话",
+                                         "       address   联系地址",
+                                         "       product_intro  产品简介",
+                                         "       user_avatar_img  商家头像地址",
+                                         "       market_price   市场价格",
+                                         "       price    活动价格",
+                                         "       buy_num  购买人数",
+                                         "       reward   已发放赏金",
+                                         "       stop_at  活动结束时间",
+                                         "       is_self  是否自己发布 0否  1是",
+                                         "       product_color:[]  颜色值",
+                                         "       org_name：门店名称",
+                                         "       photos:[\"http://www.xxx.gif/a.gif\",\"http://www.xxx.gif/b.gif\"]",
+                                         "       intro:\"微名片简介\",",
+                                         "       is_store_owner:0   0否 1是商家本人",
+                                         "       is_first_share:0   是否首次发售分享 0没有发售过  1发售过",
+                                         "       first_share_times：首次分享发售时间戳 ",
+                                         "       buy_reward_amount：购买得赏金金额",
+                                         "       reward_amount：不购买仅推广赏金",
+                                         "       time1：新时间戳",
+                                         "       current_user_id：",
+                                         "       is_first_share：",
+                                         "       first_share_time：",
+                                         "       ",
+                                         "    }",
+                                         " * ",
+                                         " * ",
+                                         " * ",
+                                         " * ",
+                                         " * ",
+                                         " * ",
+                                         " */"
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "http://super.duidui.com/Api/spread_info?token=MySw01x6N8TI2NjEwMjU0&spread_id=99&times&invite_user_id",
+                      "path": [
+                               "Api",
+                               "spread_info"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "MySw01x6N8TI2NjEwMjU0",
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "spread_id",
+                                "value": "99",
+                                "desc": "活动ID"
+                                },
+                                {
+                                "key": "times",
+                                "value": null,
+                                "desc": "分享链接进入页面的时间戳"
+                                },
+                                {
+                                "key": "invite_user_id",
+                                "value": null,
+                                "desc": "邀请人ID"
+                                }
+                                ],
+                      "protocol": "http",
+                      "host": [
+                               "super",
+                               "duidui",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "response": [],
+                      "name": "6、获取剩余库存数量",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "cd8afe2e-dedc-4ceb-9603-c794f22c2a2c",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " * ",
+                                         " * code 1000",
+                                         " * msg",
+                                         " * data:{",
+                                         "      amount_limit  剩余库存数  ",
+                                         "   }",
+                                         " * ",
+                                         " * ",
+                                         " * ",
+                                         " * ",
+                                         " */ "
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/spread_overplus?token&spread_id",
+                      "path": [
+                               "Api",
+                               "spread_overplus"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null
+                                },
+                                {
+                                "key": "spread_id",
+                                "value": null
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "response": [],
+                      "name": "7、我的发售列表",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "7c6fc6f7-6c32-48fd-9ea8-5074239eb902",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " * code:1000,",
+                                         " * msg:'',",
+                                         " * data:[",
+                                         " * {",
+                                         "      spread_id:1,",
+                                         "      product_name:测试商品名称",
+                                         "      product_intro:简介",
+                                         "      attach_type:0  广告类型 0图片 1视频",
+                                         "      pics:",
+                                         "      video:",
+                                         "      market_price 市场价",
+                                         "      price 活动价",
+                                         "      status  0活动进行 1活动结束 2已达上限",
+                                         "      status_str  活动进行、活动结束、已达上限",
+                                         "      reward_limit 赏金上限  0--不限制 1--100%   2--200%,",
+                                         "      share_timestr:分享时间戳，",
+                                         "      is_self_product:0  是否自己发布的产品  0否 1是",
+                                         "    }",
+                                         " * ]",
+                                         " */ "
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "http://super.duidui.com/Api/spread_my?token=MyTwQ146L8TE1MjY2MzQ2NjcO0O0O&page=0&row=10&status=1",
+                      "path": [
+                               "Api",
+                               "spread_my"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "MyTwQ146L8TE1MjY2MzQ2NjcO0O0O",
+                                "desc": "用户或商家登录token"
+                                },
+                                {
+                                "key": "page",
+                                "value": "0",
+                                "desc": "当前页码 默认0"
+                                },
+                                {
+                                "key": "row",
+                                "value": "10",
+                                "desc": "每页显示记录条数 默认10"
+                                },
+                                {
+                                "key": "status",
+                                "value": "1",
+                                "desc": "2 已结束 1进行中"
+                                }
+                                ],
+                      "protocol": "http",
+                      "host": [
+                               "super",
+                               "duidui",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "response": [],
+                      "name": "8、我的发售详细",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "187d2983-39de-4e11-8716-2b4c63c7660d",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " *返回数据：",
+                                         " * {",
+                                         "    \"code\": 1000,",
+                                         "    \"msg\": \"获取详细信息成功!\",",
+                                         "    \"data\": {",
+                                         "        time1：新时间戳",
+                                         "        is_first_share:0   是否首次发售分享 0没有发售过  1发售过",
+                                         "        first_share_times：首次分享发售时间戳 ",
+                                         "        current_user_id：",
+                                         "        \"product_name\": \"1\",  商品名称",
+                                         "        \"product_intro\": \"2222\",  商品简介",
+                                         "        \"market_price\": 0,  市场价",
+                                         "        \"price\": 0,   活动价",
+                                         "        \"pics\": \"https://oss.yoawo.com/yoawo_1525779282204.jpg\", 商品图片",
+                                         "        \"user_avatar_img\": \"http://spub.yoawo.com/user/151463886761120171230210107.jpg\",  商家头像",
+                                         "        \"user_nick_name\": \"五十多烦人个体户\", 商家昵称",
+                                         "        \"stop_at\": \"2018-05-12 00:00\",  活动结束时间",
+                                         "        \"invite_num\": 0,   已邀请好友成功交易数",
+                                         "        \"get_reward_val\": 0,  获得赏金金额",
+                                         "        \"invite_list\": [  邀请列表",
+                                         "          ",
+                                         "           user_id：用户id",
+                                         "           user_avatar_img：头像地址",
+                                         "           user_nick_name：昵称",
+                                         "           share_invite_num：邀请人数",
+                                         "          ",
+                                         "        ],  ",
+                                         "        \"left_reward_limit\": 0,  剩余多个邀请",
+                                         "        \"is_share_inviter\": 0   是否已成为分销商 0否 1是",
+                                         "    }",
+                                         "}",
+                                         " * ",
+                                         " * ",
+                                         " * ",
+                                         " * ",
+                                         " */"
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "http://super.duidui.com/Api/spread_my_detail?token=MyTwQ156L8TE1MjY2MzcwODIO0O0O&spread_id=4&invite_user_id=0&times=1526733264000.829",
+                      "path": [
+                               "Api",
+                               "spread_my_detail"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "MyTwQ156L8TE1MjY2MzcwODIO0O0O",
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "spread_id",
+                                "value": "4",
+                                "desc": "活动ID"
+                                },
+                                {
+                                "key": "invite_user_id",
+                                "value": "0",
+                                "desc": "//邀请好友ID  邀请人"
+                                },
+                                {
+                                "key": "times",
+                                "value": "1526733264000.829",
+                                "desc": "分销商分享时间戳"
+                                }
+                                ],
+                      "protocol": "http",
+                      "host": [
+                               "super",
+                               "duidui",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "response": [],
+                      "name": "9、商家已售商品列表",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "dc80454b-9467-46ce-8168-415d9f443ee1",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " * 返回参数：",
+                                         " * {",
+                                         "    \"code\": 1000,",
+                                         "    \"msg\": \"获取已售商品成功!\",",
+                                         "    \"data\": [{",
+                                         "        spread_id  活动ID",
+                                         "        user_nick_name  购买用户昵称",
+                                         "        expire_at：过期时间",
+                                         "        product_name：产品名称",
+                                         "        attach_type：类型 0图片 1视频",
+                                         "        video：视频地址",
+                                         "        pics：图片地址",
+                                         "        market_price：市场价",
+                                         "        price：活动价",
+                                         "        status_str：状态描述",
+                                         "        status： 状态 0待兑换 1已失效 2待收货 3已兑换 4已收货",
+                                         "        tickets_code：兑换码",
+                                         "        buy_at:购买时间",
+                                         "        is_spread_user：是否显示确认收货按钮  0不显示 1显示",
+                                         "        amount：购买数量",
+                                         "    }]",
+                                         "    }",
+                                         " * ",
+                                         " * ",
+                                         " */ "
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/sales?token=MySw01x6N8TI2NjEwMjU0&spread_id=12&status=1&page&rows",
+                      "path": [
+                               "Api",
+                               "sales"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "MySw01x6N8TI2NjEwMjU0",
+                                "desc": "登录token"
+                                },
+                                {
+                                "key": "spread_id",
+                                "value": "12",
+                                "desc": "全民推广活动ID"
+                                },
+                                {
+                                "key": "status",
+                                "value": "1",
+                                "desc": " // 1待兑换 2已失效"
+                                },
+                                {
+                                "key": "page",
+                                "value": null,
+                                "desc": "当前页码 默认0"
+                                },
+                                {
+                                "key": "rows",
+                                "value": null,
+                                "desc": "每页显示记录条数 默认10"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "name": "10、全民推广分享成功回调 首次发售",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/spread_share_ok?spread_id&invite_user_id&current_user_id&order_id&times&invite_timestr",
+                      "path": [
+                               "Api",
+                               "spread_share_ok"
+                               ],
+                      "query": [
+                                {
+                                "key": "spread_id",
+                                "value": null,
+                                "desc": "活动ID"
+                                },
+                                {
+                                "key": "invite_user_id",
+                                "value": null,
+                                "desc": "邀请人ID"
+                                },
+                                {
+                                "key": "current_user_id",
+                                "value": null,
+                                "desc": "当前用户ID（被邀请人、分享信息的用户ID）"
+                                },
+                                {
+                                "key": "order_id",
+                                "value": null,
+                                "desc": "购买商品订单ID"
+                                },
+                                {
+                                "key": "times",
+                                "value": null,
+                                "desc": "分享邀请链接中的时间戳+随机数"
+                                },
+                                {
+                                "key": "invite_timestr",
+                                "value": null,
+                                "desc": "邀请链接中的 时间戳"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "name": "11、全民推广活动详细",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/spread_detail?token&spread_id",
+                      "path": [
+                               "Api",
+                               "spread_detail"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null,
+                                "desc": "登录token"
+                                },
+                                {
+                                "key": "spread_id",
+                                "value": null,
+                                "desc": "活动ID"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "name": "12、分享成功回调函数  再次发售",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/spread_share_again?spread_id&invite_user_id&current_user_id&order_id&times&invite_timestr",
+                      "path": [
+                               "Api",
+                               "spread_share_again"
+                               ],
+                      "query": [
+                                {
+                                "key": "spread_id",
+                                "value": null,
+                                "desc": "活动ID"
+                                },
+                                {
+                                "key": "invite_user_id",
+                                "value": null,
+                                "desc": "邀请人ID"
+                                },
+                                {
+                                "key": "current_user_id",
+                                "value": null,
+                                "desc": "当前用户ID"
+                                },
+                                {
+                                "key": "order_id",
+                                "value": null,
+                                "desc": "订单编号ID"
+                                },
+                                {
+                                "key": "times",
+                                "value": null,
+                                "desc": "分享邀请链接中的时间戳+随机数"
+                                },
+                                {
+                                "key": "invite_timestr",
+                                "value": null,
+                                "desc": "邀请链接中的时间戳"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "response": [],
+                      "name": "3、商家立即已确认 发货操作",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "fab085d7-e41c-4ee9-bd3f-85277bfbcc56",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " *返回参数说明：",
+                                         " * {",
+                                         "    \"code\": 1000,",
+                                         "    \"msg\": \"恭喜、确认成功!\",",
+                                         "    \"data\": []",
+                                         "}",
+                                         " * ",
+                                         " */ "
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/spread_send?token&tickets_code",
+                      "path": [
+                               "Api",
+                               "spread_send"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null
+                                },
+                                {
+                                "key": "tickets_code",
+                                "value": null
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "response": [],
+                      "name": "13、全民推广 购买判断是否还有库存",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "cf7fa39d-e453-40d3-831a-678a196e71ce",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " * 返回参数：",
+                                         " * {",
+                                         "     code:1000,",
+                                         "     msg:'获取信息成功!',",
+                                         "     data:{",
+                                         "         enough_amount:1  //是否有剩余库存   0没有库存  1有库存",
+                                         "     }",
+                                         " }",
+                                         " */ "
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/spread_amount?spread_id&amount",
+                      "path": [
+                               "Api",
+                               "spread_amount"
+                               ],
+                      "query": [
+                                {
+                                "key": "spread_id",
+                                "value": null,
+                                "desc": "活动ID"
+                                },
+                                {
+                                "key": "amount",
+                                "value": null,
+                                "desc": "购买数量"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      }
+                      ]
+             },
+             {
+             "name": "微名片",
+             "desc": "",
+             "item": [
+                      {
+                      "response": [],
+                      "name": "1、获取微名片信息",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "0f32b598-d75c-4572-9fe9-adf1f53e1f7f",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " * {",
+                                         "    \"code\": 1000,",
+                                         "    \"msg\": \"获取微名片信息成功!\",",
+                                         "    \"data\": {",
+                                         "        \"tiny_id\": 1,",
+                                         "        \"user_id\": 2,",
+                                         "        \"phone\":\"联系电话\"",
+                                         "        \"area_id\": 94,",
+                                         "        \"org_name\": \"qqq花之吻花之吻花之吻花之吻花之吻花之吻花之吻\",",
+                                         "        \"industry\": 2,",
+                                         "        \"address\": \"111北京海淀区\",",
+                                         "        \"shop_hours\": \"9  - 10\",",
+                                         "        \"shop_setting\": [",
+                                         "            \"3\",",
+                                         "            \"4\"",
+                                         "        ],",
+                                         "        \"is_support_nuo\": 0,",
+                                         "        \"logo\": \"\",",
+                                         "        \"photos\": [",
+                                         "            \"https://oss.yoawo.com/yoawo_152413652995.png\",",
+                                         "            \"https://oss.yoawo.com/yoawo_152413653033.jpg\"",
+                                         "        ],",
+                                         "        \"org_lng\": \"12.11\",",
+                                         "        \"org_lat\": \"2322\",",
+                                         "        \"intro\": \"介绍1212\",",
+                                         "        \"hits\": 1,",
+                                         "        \"created\": 1523253066,",
+                                         "        \"user_mobi\": \"18703333658\",",
+                                         "        \"user_nick_name\": \"五十多烦人个体户\",",
+                                         "        \"user_avatar_img\": \"user/151463886761120171230210107.jpg\"",
+                                         "    }",
+                                         "}",
+                                         " */ "
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "GET",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/card_info?token=Myiw01x6N8TIyOTAzNTMx&tiny_id",
+                      "path": [
+                               "Api",
+                               "card_info"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx",
+                                "desc": "登录token"
+                                },
+                                {
+                                "key": "tiny_id",
+                                "value": null,
+                                "desc": "微名片ID"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "name": "2、微名片新增、编辑请求",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/card_add_depose?token&tiny_id&org_name&industry&address&org_lng&org_lat&shop_hours&shop_setting&is_support_nuo&logo&photos&intro&phone",
+                      "path": [
+                               "Api",
+                               "card_add_depose"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null,
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "tiny_id",
+                                "value": null,
+                                "desc": "微名片ID"
+                                },
+                                {
+                                "key": "org_name",
+                                "value": null,
+                                "desc": "门店名称"
+                                },
+                                {
+                                "key": "industry",
+                                "value": null,
+                                "desc": "所属行业ID"
+                                },
+                                {
+                                "key": "address",
+                                "value": null,
+                                "desc": "联系地址"
+                                },
+                                {
+                                "key": "org_lng",
+                                "value": null,
+                                "desc": "经度"
+                                },
+                                {
+                                "key": "org_lat",
+                                "value": null,
+                                "desc": "纬度"
+                                },
+                                {
+                                "key": "shop_hours",
+                                "value": null,
+                                "desc": "营业时间"
+                                },
+                                {
+                                "key": "shop_setting",
+                                "value": null,
+                                "desc": "店内设置  0wifi  1停车位 2支付宝支付 3微信支付"
+                                },
+                                {
+                                "key": "is_support_nuo",
+                                "value": null,
+                                "desc": "是否支持锘 1-支持（V盟） 0-不支持"
+                                },
+                                {
+                                "key": "logo",
+                                "value": null,
+                                "desc": "照片"
+                                },
+                                {
+                                "key": "photos",
+                                "value": null,
+                                "desc": "照片（最多九张）多个用英文逗号分隔"
+                                },
+                                {
+                                "key": "intro",
+                                "value": null,
+                                "desc": "门店简介"
+                                },
+                                {
+                                "key": "phone",
+                                "value": null,
+                                "desc": "联系电话"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "response": [],
+                      "name": "3、保存私信信息",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "8eb211b5-be79-476a-a921-0d1ae963fc87",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " * 返回参数：",
+                                         " * code:1000,",
+                                         " * msg:'记录私信成功!'",
+                                         " * data:{}",
+                                         " */ "
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/letter_add?token&to_userid&from_userid&content",
+                      "path": [
+                               "Api",
+                               "letter_add"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null,
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "to_userid",
+                                "value": null,
+                                "desc": "发送给用户ID"
+                                },
+                                {
+                                "key": "from_userid",
+                                "value": null,
+                                "desc": "用户登录ID"
+                                },
+                                {
+                                "key": "content",
+                                "value": null,
+                                "desc": "内容"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "response": [],
+                      "name": "4、我的私信列表",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "cd4a740e-e156-45a4-9f2e-7aa926d512aa",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " * 返回参数说明：",
+                                         " * {",
+                                         "      code:1000,",
+                                         "      msg:'获取我的私信成功!',",
+                                         "      data:[",
+                                         "      {",
+                                         "          MsgId:11,  消息ID",
+                                         "          FromUserId:12, 发送用户ID",
+                                         "          CreateTime:2018-05-09 12:12:12,  发送时间",
+                                         "          Content:聊天内容, ",
+                                         "          FromUserName:\"发送用户昵称\",",
+                                         "          user_avatar_img: 发送用户头像地址",
+                                         "      }",
+                                         "      ]",
+                                         "    }",
+                                         " * ",
+                                         " */ "
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/my_letter?token=Myiw01x6N8TIyOTAzNTMx&page&rows",
+                      "path": [
+                               "Api",
+                               "my_letter"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx",
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "page",
+                                "value": null,
+                                "desc": "当前页 默认0 第一页"
+                                },
+                                {
+                                "key": "rows",
+                                "value": null,
+                                "desc": "每页显示记录条数 默认1000 （不分页）"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "name": "5、我的私信列表 商家与某用户所有聊天记录",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/my_letter_details?token&MsgId&page&rows",
+                      "path": [
+                               "Api",
+                               "my_letter_details"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null,
+                                "desc": "登录用户或商家token"
+                                },
+                                {
+                                "key": "MsgId",
+                                "value": null,
+                                "desc": "消息ID"
+                                },
+                                {
+                                "key": "page",
+                                "value": null,
+                                "desc": "当前页码 默认0 第一页"
+                                },
+                                {
+                                "key": "rows",
+                                "value": null,
+                                "desc": "每页显示记录条数  默认1000 不分页"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "response": [],
+                      "name": "6、我的私信列表 商家与某用户所有聊天记录 用户点击",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "ce10a90e-16a5-4852-88ea-e99e286e0c9e",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " *              'MsgId'=>$row->MsgId,",
+                                         "                'FromUserId'=>$fromUser->user_id,",
+                                         "                'FromUserName'=>$fromUser->user_nick_name,",
+                                         "                'FromUserImg'=>$fromUser->user_avatar_img,",
+                                         "                'ToUserId'=>$toUser->user_id,",
+                                         "                'ToUserName'=>$toUser->user_nick_name,",
+                                         "                'ToUserImg'=>$toUser->user_avatar_img,",
+                                         "                'CreateTime'=>$timeStr,",
+                                         "                'Content'=>$row->Content",
+                                         " */ "
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "GET",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/user_letters?token&spread_id&page&rows",
+                      "path": [
+                               "Api",
+                               "user_letters"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null,
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "spread_id",
+                                "value": null,
+                                "desc": "商家用户ID"
+                                },
+                                {
+                                "key": "page",
+                                "value": null
+                                },
+                                {
+                                "key": "rows",
+                                "value": null
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      }
+                      ]
+             },
+             {
+             "name": "钞票雨",
+             "desc": "",
+             "item": [
+                      {
+                      "response": [],
+                      "name": "10、钞票雨活动预报列表",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "5bc3293f-a38d-49e1-b0f5-455a5dc1fd3e",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         "{",
+                                         "    \"code\": 1000,   //返回状态码 1000 --成功",
+                                         "    \"msg\": \"获取钞票雨信息成功!\",   //提示消息",
+                                         "    \"time_str\": 1524821205,        //服务器当前时间戳",
+                                         "    \"data\": [",
+                                         "        {",
+                                         "            \"coin_id\": 1,  //钞票雨活动ID",
+                                         "            \"coin_level\": 1,   //金钱暴等级",
+                                         "            \"event_theme\": \"测试名称测试名称\",  //主题名称",
+                                         "            \"start_at\": 1524832800,  //开始时间戳",
+                                         "            \"attach_type\": 1,  //广告附件类型 0图片 1视频",
+                                         "            \"asset\": null,  //活动图片 多个用英文逗号分隔",
+                                         "            \"pics\": null,   //广告图Gif 多个用英文逗号分隔",
+                                         "            \"video\": null,   //视频地址  ",
+                                         "            \"event_desc\": \"测试测试测试测试测试测试测试测试测试\",  //活动描述",
+                                         "            \"follow_num\": 42,  //关注人数",
+                                         "            \"join_num\":38,  //参数人数",
+                                         "            \"comments\": [",
+                                         "                {",
+                                         "                    \"time_str\": \"18:30\",",
+                                         "                    \"nickname\": \"天路之谜\",",
+                                         "                    \"title\": \"哇，今天我运气要爆棚！！！\"",
+                                         "                },",
+                                         "                {",
+                                         "                    \"time_str\": \"17:16\",",
+                                         "                    \"nickname\": \"枫叶轻飘\",",
+                                         "                    \"title\": \"哇，今天我运气要爆棚！！！\"",
+                                         "                },",
+                                         "                {",
+                                         "                    \"time_str\": \"17:16\",",
+                                         "                    \"nickname\": \"枫叶轻飘\",",
+                                         "                    \"title\": \"哇，今天我运气要爆棚！！！\"",
+                                         "                }",
+                                         "            ]",
+                                         "        }",
+                                         "    ]",
+                                         "}",
+                                         "*/"
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/coin_forecast_list?token=Myiw01x6N8TIyOTAzNTMx&area_name=磁县",
+                      "path": [
+                               "Api",
+                               "coin_forecast_list"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx",
+                                "desc": "登录token"
+                                },
+                                {
+                                "key": "area_name",
+                                "value": "磁县",
+                                "desc": "地区名称"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "response": [],
+                      "name": "11、钞票雨用户、商家排行top20 ",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "7c70d813-1d45-486c-aacd-db4c4f5993b6",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " * ",
+                                         "{",
+                                         "    \"code\": 1000,",
+                                         "    \"msg\": \"获取排行信息成功!\",",
+                                         "    \"data\": [",
+                                         "        {",
+                                         "            \"rank_id\": 1,   //排行名次",
+                                         "            \"user_name\": \"了了\",   //用户昵称",
+                                         "            \"user_avatar_img\": \"http://spub.yoawo.com/user/151467094552620171231055545.jpg\", //现金、诺总额",
+                                         "            \"total_amount\": 22  //用户头像",
+                                         "        },",
+                                         "        {",
+                                         "            \"rank_id\": 2,",
+                                         "            \"user_name\": \"五十多烦人个体户\",",
+                                         "            \"user_avatar_img\": \"http://spub.yoawo.com/user/151463886761120171230210107.jpg\",",
+                                         "            \"total_amount\": 10  ",
+                                         "        },",
+                                         "        {",
+                                         "            \"rank_id\": 3,",
+                                         "            \"user_name\": \"嘻哈喜欢\",",
+                                         "            \"user_avatar_img\": \"http://spub.yoawo.com/user/151627960378620180118204643.jpg\",",
+                                         "            \"total_amount\": 9",
+                                         "        }",
+                                         "    ],",
+                                         "    \"my_data\": {",
+                                         "        \"rank_id\": 2,",
+                                         "        \"user_name\": \"五十多烦人个体户\",",
+                                         "        \"user_avatar_img\": \"http://spub.yoawo.com/user/151463886761120171230210107.jpg\",",
+                                         "        \"total_amount\": 10",
+                                         "    }",
+                                         "}",
+                                         "",
+                                         " ",
+                                         " */ "
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/coin_rank?token=Myiw01x6N8TIyOTAzNTMx&user_type=0",
+                      "path": [
+                               "Api",
+                               "coin_rank"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx",
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "user_type",
+                                "value": "0",
+                                "desc": "排行类型  0用户 1商家"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "name": "12、发起钞票雨基本资料接口",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "http://super.duidui.com/Api/coin_basic?token=Myiw01x6N8TIyOTAzNTMx&event_theme&event_desc&attach_type&asset&start_date&start_time&pics&video",
+                      "path": [
+                               "Api",
+                               "coin_basic"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx",
+                                "desc": "登录token"
+                                },
+                                {
+                                "key": "event_theme",
+                                "value": null,
+                                "desc": "主题名称"
+                                },
+                                {
+                                "key": "event_desc",
+                                "value": null,
+                                "desc": "活动描述"
+                                },
+                                {
+                                "key": "attach_type",
+                                "value": null,
+                                "desc": "广告类型  0图片 1视频"
+                                },
+                                {
+                                "key": "asset",
+                                "value": null,
+                                "desc": "活动图片  多个用英文逗号分隔"
+                                },
+                                {
+                                "key": "start_date",
+                                "value": null,
+                                "desc": "活动开始日期"
+                                },
+                                {
+                                "key": "start_time",
+                                "value": null,
+                                "desc": "活动开始时间"
+                                },
+                                {
+                                "key": "pics",
+                                "value": null,
+                                "desc": "广告图GIF  多个用英文逗号分隔"
+                                },
+                                {
+                                "key": "video",
+                                "value": null,
+                                "desc": "活动视频"
+                                }
+                                ],
+                      "protocol": "http",
+                      "host": [
+                               "super",
+                               "duidui",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "name": "13、钞票雨结算页面",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/coin_balance?token=Myiw01x6N8TIyOTAzNTMx&coin_id=1",
+                      "path": [
+                               "Api",
+                               "coin_balance"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx"
+                                },
+                                {
+                                "key": "coin_id",
+                                "value": "1"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "response": [],
+                      "name": "14、钞票雨开始",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "5f68ada8-bdf7-4f84-a289-08bd1b27a0b2",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         "var obj = {};",
+                                         "obj.token = 'Myiw01x6N8TIyOTAzNTMx';  //登录token",
+                                         "obj.coin_type = 0;   //获取奖品类型  ",
+                                         "                       0 第一次页面加载",
+                                         "                       1现金 ",
+                                         "                       2诺 ",
+                                         "                       3优惠券 ",
+                                         "                       4代金券 ",
+                                         "                       5广告",
+                                         "obj.coin_id = 1;     //钞票雨活动ID",
+                                         "obj.city = '磁县';   //地区名称",
+                                         "obj.load = 0;  //第一次加载   0页面加载   1获取奖品信息",
+                                         "",
+                                         "ws.send(JSON.stringify(obj));",
+                                         "*/"
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "ws://39.104.78.93:9501",
+                      "protocol": "ws",
+                      "host": [
+                               "39",
+                               "104",
+                               "78",
+                               "93"
+                               ],
+                      "port": "9501"
+                      }
+                      }
+                      },
+                      {
+                      "response": [],
+                      "name": "15、钞票雨接龙占位列表页面",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "e81a268e-210b-4272-a60c-df0cb01527fe",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " * {",
+                                         "    \"code\": 1000,",
+                                         "    \"msg\": \"获取信息成功!\",",
+                                         "    \"data\": [",
+                                         "        {",
+                                         "            \"time_str\": \"9:00\",  //时间",
+                                         "            \"coin_level\": 0,     //金钱暴等级 1一级 2二级 3三级 4四级",
+                                         "            \"org_name\": \"\",      //门店名称",
+                                         "            \"user_nick_name\": \"\", //用户昵称",
+                                         "            \"is_hold\": 0          //0没有占位 1已占位",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"9:30\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"10:00\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"10:30\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"11:00\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"11:30\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"12:00\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"12:30\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"13:00\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"13:30\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"14:00\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"14:30\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"15:00\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"15:30\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"16:00\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"16:30\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"17:00\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"17:30\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"18:00\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"18:30\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"19:00\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"19:30\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"20:00\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"20:30\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"21:00\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        },",
+                                         "        {",
+                                         "            \"time_str\": \"21:30\",",
+                                         "            \"coin_level\": 0,",
+                                         "            \"org_name\": \"\",",
+                                         "            \"user_nick_name\": \"\",",
+                                         "            \"is_hold\": 0",
+                                         "        }",
+                                         "    ]",
+                                         "}",
+                                         "*/"
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "http://super.duidui.com/Api/coin_sequence?token=Myiw01x6N8TIyOTAzNTMx",
+                      "path": [
+                               "Api",
+                               "coin_sequence"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx"
+                                }
+                                ],
+                      "protocol": "http",
+                      "host": [
+                               "super",
+                               "duidui",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "response": [],
+                      "name": "16、发起钞票雨基本资料接口",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "819b8c1f-baaf-4e65-9678-d340c5535602",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " * {",
+                                         "     code:1000",
+                                         "     msg:''",
+                                         "     data:{",
+                                         "         coin_id:12",
+                                         "     }",
+                                         " }",
+                                         " */ "
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/coin_basic?token=Myiw01x6N8TIyOTAzNTMx&event_theme&event_desc&asset&start_date&start_time&attach_type&pics&video&invite_user_id",
+                      "path": [
+                               "Api",
+                               "coin_basic"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx",
+                                "desc": "登录token"
+                                },
+                                {
+                                "key": "event_theme",
+                                "value": null,
+                                "desc": "活动主题名称"
+                                },
+                                {
+                                "key": "event_desc",
+                                "value": null,
+                                "desc": "活动描述"
+                                },
+                                {
+                                "key": "asset",
+                                "value": null,
+                                "desc": "活动图片 多个用英文逗号分隔"
+                                },
+                                {
+                                "key": "start_date",
+                                "value": null,
+                                "desc": "活动开始日期"
+                                },
+                                {
+                                "key": "start_time",
+                                "value": null,
+                                "desc": "活动开始时间"
+                                },
+                                {
+                                "key": "attach_type",
+                                "value": null,
+                                "desc": "广告类型  0图片 1视频"
+                                },
+                                {
+                                "key": "pics",
+                                "value": null,
+                                "desc": "广告图GIF"
+                                },
+                                {
+                                "key": "video",
+                                "value": null,
+                                "desc": "活动视频"
+                                },
+                                {
+                                "key": "invite_user_id",
+                                "value": null,
+                                "desc": "邀请人user_id"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "name": "17、选择充值套餐",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/coin_package?token&coin_id&combo_amount=20&coin_min_bonus&coin_max_bonus&coin_split_num",
+                      "path": [
+                               "Api",
+                               "coin_package"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null,
+                                "desc": "登录token"
+                                },
+                                {
+                                "key": "coin_id",
+                                "value": null,
+                                "desc": "活动ID"
+                                },
+                                {
+                                "key": "combo_amount",
+                                "value": "20",
+                                "desc": "套餐充值金额 20 50 100 200"
+                                },
+                                {
+                                "key": "coin_min_bonus",
+                                "value": null,
+                                "desc": "诺、现金最小拆分面额"
+                                },
+                                {
+                                "key": "coin_max_bonus",
+                                "value": null,
+                                "desc": "诺、现金最大拆分面额"
+                                },
+                                {
+                                "key": "coin_split_num",
+                                "value": null,
+                                "desc": "诺、现金拆分数量"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "response": [],
+                      "name": "18、扣除用户幸运星进入钞票雨活动",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "76a66035-933b-4081-8714-92f91bd88bf6",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         "{",
+                                         "    code:1000,",
+                                         "    status:false,  //false没有足够幸运星  true已扣除幸运星，可以进入活动",
+                                         "}",
+                                         "*/"
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/star_num?token=Myiw01x6N8TIyOTAzNTMx",
+                      "path": [
+                               "Api",
+                               "star_num"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx",
+                                "desc": "登录token"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "name": "19、钞票雨添加优惠券",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/coin_pkg_coupon?token=Myiw01x6N8TIyOTAzNTMx&coin_id&coupon_num&coupon_consume&coupon_minus&coupon_expire",
+                      "path": [
+                               "Api",
+                               "coin_pkg_coupon"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx",
+                                "desc": "登录token"
+                                },
+                                {
+                                "key": "coin_id",
+                                "value": null,
+                                "desc": "钞票雨活动ID"
+                                },
+                                {
+                                "key": "coupon_num",
+                                "value": null,
+                                "desc": "优惠券数量"
+                                },
+                                {
+                                "key": "coupon_consume",
+                                "value": null,
+                                "desc": "优惠券满消费金额"
+                                },
+                                {
+                                "key": "coupon_minus",
+                                "value": null,
+                                "desc": "优惠券减金额"
+                                },
+                                {
+                                "key": "coupon_expire",
+                                "value": null,
+                                "desc": "优惠券有效期"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "name": "20、钞票雨添加代金券",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/coin_pkg_voucher?token=Myiw01x6N8TIyOTAzNTMx&coin_id&voucher_amount&voucher_min_bonus&voucher_max_bonus&voucher_split_num&voucher_expire",
+                      "path": [
+                               "Api",
+                               "coin_pkg_voucher"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx",
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "coin_id",
+                                "value": null,
+                                "desc": "钞票雨活动ID"
+                                },
+                                {
+                                "key": "voucher_amount",
+                                "value": null,
+                                "desc": "代金券总金额"
+                                },
+                                {
+                                "key": "voucher_min_bonus",
+                                "value": null,
+                                "desc": "代金券最小拆分金额"
+                                },
+                                {
+                                "key": "voucher_max_bonus",
+                                "value": null,
+                                "desc": "代金券最大拆分金额"
+                                },
+                                {
+                                "key": "voucher_split_num",
+                                "value": null,
+                                "desc": "代金卷拆分数量"
+                                },
+                                {
+                                "key": "voucher_expire",
+                                "value": null,
+                                "desc": "代金券有效期"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "name": "21、发起钞票雨添加广告文案",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/coin_add_ad?token=Myiw01x6N8TIyOTAzNTMx&ad_words&coin_id",
+                      "path": [
+                               "Api",
+                               "coin_add_ad"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx",
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "ad_words",
+                                "value": null,
+                                "desc": "广告文案"
+                                },
+                                {
+                                "key": "coin_id",
+                                "value": null,
+                                "desc": "钞票雨活动ID"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "name": "22、发起钞票雨添加广告图片",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/coin_add_thumb?token=Myiw01x6N8TIyOTAzNTMx&file&coin_id",
+                      "path": [
+                               "Api",
+                               "coin_add_thumb"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx",
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "file",
+                                "value": null,
+                                "desc": "表单文件名称"
+                                },
+                                {
+                                "key": "coin_id",
+                                "value": null,
+                                "desc": "钞票雨活动ID"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "name": "23、全民推广删除广告",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/coin_adv_del?token&adv_id",
+                      "path": [
+                               "Api",
+                               "coin_adv_del"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null,
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "adv_id",
+                                "value": null,
+                                "desc": "广告ID"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "name": "24、发起钞票雨添加广告图片（APP）",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/coin_app_thumb?token&url&coin_id",
+                      "path": [
+                               "Api",
+                               "coin_app_thumb"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null,
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "url",
+                                "value": null,
+                                "desc": "oss图片URL地址"
+                                },
+                                {
+                                "key": "coin_id",
+                                "value": null,
+                                "desc": "活动ID"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "name": "25、钞票雨详细",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/coin_detail?token&coin_id",
+                      "path": [
+                               "Api",
+                               "coin_detail"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null,
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "coin_id",
+                                "value": null,
+                                "desc": "活动ID"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      }
+                      ]
+             },
+             {
+             "name": "签到机及兑兑幸运星",
+             "desc": "",
+             "item": [
+                      {
+                      "response": [],
+                      "name": "1、签到机获取幸运星",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "d115ed14-ca68-4ceb-ab57-ec5142bd0b41",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "{",
+                                         "    \"code\": 1000,   //成功状态码",
+                                         "    \"msg\": \"获取幸运星成功!\",  //提示消息",
+                                         "    \"data\": {",
+                                         "        \"title\": \"哇哦哇！喜中幸运星\",  //标题",
+                                         "        \"sub_title\": \"拿走不谢\",  //子标题",
+                                         "        \"star\": 5  //本次获取幸运星个数",
+                                         "    }",
+                                         "}"
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/check_in_star?token=Myiw01x6N8TIyOTAzNTMx",
+                      "path": [
+                               "Api",
+                               "check_in_star"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx",
+                                "desc": "用户登录token"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      },
+                      "desc": "签到机获取幸运星"
+                      }
+                      },
+                      {
+                      "name": "3、兑兑幸运星点击分享前判断  每人每天最多分享5次",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/share_before_star?token=Myiw01x6N8TIyOTAzNTMx",
+                      "path": [
+                               "Api",
+                               "share_before_star"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      },
+                      "desc": "兑兑幸运星点击分享前判断  每人每天最多分享5次"
+                      },
+                      "response": []
+                      },
+                      {
+                      "name": "5、兑兑幸运星 领取者奖励 第一个领取者奖励5个幸运星 分享者5个奖励",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/share_get_star?token=Myiw01x6N8TIyOTAzNTMx&time_str=&share_user_id=2",
+                      "path": [
+                               "Api",
+                               "share_get_star"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx",
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "time_str",
+                                "value": "",
+                                "desc": "分享链接中的时间戳"
+                                },
+                                {
+                                "key": "share_user_id",
+                                "value": "2",
+                                "desc": "分享的用户ID"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "name": "4、兑兑幸运星分享成功 给用户 分享奖励5个幸运星",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/share_duidui_star?token=Myiw01x6N8TIyOTAzNTMx&time_str",
+                      "path": [
+                               "Api",
+                               "share_duidui_star"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx",
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "time_str",
+                                "value": null,
+                                "desc": "时间戳"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      },
+                      {
+                      "name": "我的幸运星流水",
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "http://super.duidui.com/Api/star_record?token",
+                      "path": [
+                               "Api",
+                               "star_record"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null
+                                }
+                                ],
+                      "protocol": "http",
+                      "host": [
+                               "super",
+                               "duidui",
+                               "com"
+                               ]
+                      }
+                      },
+                      "response": []
+                      }
+                      ]
+             },
+             {
+             "name": "我的钱包",
+             "desc": "",
+             "item": [
+                      {
+                      "response": [],
+                      "name": "1、商品码列表",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "44587524-3975-44ce-a35f-61538673e857",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         "返回参数说明：",
+                                         "{",
+                                         "    \"code\": 1000,",
+                                         "    \"msg\": \"获取商品码列表成功!\",",
+                                         "    \"data\": [",
+                                         "       {",
+                                         "        active_id  活动ID",
+                                         "        active_name  购买用户昵称",
+                                         "        expire_at：过期时间",
+                                         "        product_name：产品名称",
+                                         "        attach_type：类型 0图片 1视频",
+                                         "        video：视频地址",
+                                         "        pics：图片地址",
+                                         "        market_price：市场价",
+                                         "        price：活动价",
+                                         "        status_str：状态描述",
+                                         "        status： 状态 0待兑换 1已失效 2确认收货 3已兑换 4已收货",
+                                         "        tickets_code:兑换码，",
+                                         "        is_self_product：1  是否自己的商品 0--否  1--是",
+                                         "        amount：购买数量，",
+                                         "        is_spread_user：是否显示确认收货按钮  0不显示 1显示",
+                                         "        buy_at：购买时间",
+                                         "       }",
+                                         "     ]",
+                                         "}",
+                                         "*/"
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/product_codes?token&status&page&rows",
+                      "path": [
+                               "Api",
+                               "product_codes"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null,
+                                "desc": "登录token"
+                                },
+                                {
+                                "key": "status",
+                                "value": null,
+                                "desc": "// 1未使用 2已失效"
+                                },
+                                {
+                                "key": "page",
+                                "value": null,
+                                "desc": "当前页码 默认0 第一页"
+                                },
+                                {
+                                "key": "rows",
+                                "value": null,
+                                "desc": "每页显示记录条数 默认10"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "response": [],
+                      "name": "2、用户立即兑换操作",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "4de8210c-018e-42e2-8c7c-31c8abb6a050",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " *返回参数说明：",
+                                         " * {",
+                                         "    \"code\": 1000,",
+                                         "    \"msg\": \"恭喜、兑换成功!\",",
+                                         "    \"data\": []",
+                                         "}",
+                                         " * ",
+                                         " */ "
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/exchange?token&tickets_code",
+                      "path": [
+                               "Api",
+                               "exchange"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null,
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "tickets_code",
+                                "value": null,
+                                "desc": "商品码"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "response": [],
+                      "name": "3、用户确认收货",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "5acd5bb3-182d-4583-beb5-3eb37cafeb67",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/**",
+                                         " *返回参数说明：",
+                                         " * {",
+                                         "    \"code\": 1000,",
+                                         "    \"msg\": \"恭喜、确认成功!\",",
+                                         "    \"data\": []",
+                                         "}",
+                                         " * ",
+                                         " */ "
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/spread_user_confirm?token&tickets_code",
+                      "path": [
+                               "Api",
+                               "spread_user_confirm"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": null
+                                },
+                                {
+                                "key": "tickets_code",
+                                "value": null
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      }
+                      ]
+             },
+             {
+             "name": "去消费",
+             "desc": "",
+             "item": [
+                      {
+                      "response": [],
+                      "name": "1、行业分类列表",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "a0859566-785a-46a6-848e-15e764ff76d5",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/*",
+                                         "返回参数：",
+                                         "{",
+                                         "    \"code\": 1000,",
+                                         "    \"msg\": \"获取信息成功!\",",
+                                         "    \"data\": [",
+                                         "        {",
+                                         "            \"industry_id\": 1,       //行业分类ID",
+                                         "            \"name\": \"时尚购物\"      //行业分类名称",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 2,",
+                                         "            \"name\": \"餐饮美食\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 3,",
+                                         "            \"name\": \"生鲜水果\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 4,",
+                                         "            \"name\": \"生活服务\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 5,",
+                                         "            \"name\": \"酒店住宿\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 6,",
+                                         "            \"name\": \"烟酒糖茶\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 7,",
+                                         "            \"name\": \"鲜花礼品\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 8,",
+                                         "            \"name\": \"休闲娱乐\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 9,",
+                                         "            \"name\": \"美容美发\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 10,",
+                                         "            \"name\": \"家装家居\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 11,",
+                                         "            \"name\": \"数码电器\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 12,",
+                                         "            \"name\": \"汽车服务\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 13,",
+                                         "            \"name\": \"母婴玩具\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 14,",
+                                         "            \"name\": \"婚庆摄影\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 15,",
+                                         "            \"name\": \"医疗健康\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 16,",
+                                         "            \"name\": \"金融保险\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 17,",
+                                         "            \"name\": \"机关单位\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 18,",
+                                         "            \"name\": \"教育培训\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 19,",
+                                         "            \"name\": \"农副农资\"",
+                                         "        },",
+                                         "        {",
+                                         "            \"industry_id\": 20,",
+                                         "            \"name\": \"民间组织\"",
+                                         "        }",
+                                         "    ]",
+                                         "}",
+                                         "*/"
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/industry",
+                      "path": [
+                               "Api",
+                               "industry"
+                               ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "response": [],
+                      "name": "2、去消费banner列表",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "d1bcc1a3-0d66-4588-b210-1d308d96f4fa",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/*",
+                                         "返回参数：",
+                                         "{",
+                                         "    \"code\": 1000,",
+                                         "    \"msg\": \"获取信息成功!\",",
+                                         "    \"data\": [",
+                                         "        {",
+                                         "            \"title\": \"测试标题\",",
+                                         "            \"thumb\": \"https://oss.yoawo.com/yoawo_1526056829880.png\"",
+                                         "        }",
+                                         "    ]",
+                                         "}",
+                                         "*/"
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/consume_banner?city_name",
+                      "path": [
+                               "Api",
+                               "consume_banner"
+                               ],
+                      "query": [
+                                {
+                                "key": "city_name",
+                                "value": null,
+                                "desc": "地区名称"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      },
+                      {
+                      "response": [],
+                      "name": "3、根据行业类别，获取微名片信息表",
+                      "event": [
+                                {
+                                "script": {
+                                "id": "456034f9-da32-48c1-a886-9cfd1870fc57",
+                                "type": "text/javascript",
+                                "exec": [
+                                         "/*",
+                                         "返回参数：",
+                                         "{",
+                                         "    \"code\": 1000,",
+                                         "    \"msg\": \"获取列表成功!\",",
+                                         "    \"data\": [",
+                                         "        {",
+                                         "            \"tiny_id\": 1,  //微名片ID",
+                                         "            \"org_name\": \"qqq花之吻花之吻花之吻花之吻花之吻花之吻花之吻\",  //门店名称",
+                                         "            \"address\": \"111北京海淀区\",                                   //联系地址",
+                                         "            \"mobile\": \"18703333658\",                                      //电话",
+                                         "            \"logo\": \"https://oss.yoawo.com/yoawo_1526056829880.png\"       //logo图片URL",
+                                         "        }",
+                                         "    ]",
+                                         "}",
+                                         "",
+                                         "*/"
+                                         ]
+                                },
+                                "listen": "test"
+                                }
+                                ],
+                      "request": {
+                      "body": {},
+                      "method": "POST",
+                      "header": [],
+                      "url": {
+                      "raw": "https://super.api.yoawo.com/Api/consume_vcard_list?token=Myiw01x6N8TIyOTAzNTMx&industry_id=1&area_name=磁县&page=0&rows=10",
+                      "path": [
+                               "Api",
+                               "consume_vcard_list"
+                               ],
+                      "query": [
+                                {
+                                "key": "token",
+                                "value": "Myiw01x6N8TIyOTAzNTMx",
+                                "desc": "用户登录token"
+                                },
+                                {
+                                "key": "industry_id",
+                                "value": "1",
+                                "desc": "行业分类ID"
+                                },
+                                {
+                                "key": "area_name",
+                                "value": "磁县",
+                                "desc": "地区名称"
+                                },
+                                {
+                                "key": "page",
+                                "value": "0",
+                                "desc": "当前页码默认0 第一页"
+                                },
+                                {
+                                "key": "rows",
+                                "value": "10",
+                                "desc": "每页显示记录条数"
+                                }
+                                ],
+                      "protocol": "https",
+                      "host": [
+                               "super",
+                               "api",
+                               "yoawo",
+                               "com"
+                               ]
+                      }
+                      }
+                      }
+                      ]
+             },
+             {
+             "response": [],
+             "name": "2、首页获取系统信息",
+             "event": [
+                       {
+                       "script": {
+                       "id": "2815554b-fd9a-4498-b806-5c7bcc55e29f",
+                       "type": "text/javascript",
+                       "exec": [
+                                "{",
+                                "\t\"code\": 1000,",
+                                "\t\"msg\": \"获取系统信息成功!\",",
+                                "\t\"data\": {",
+                                "\t\t\"is_checked_in\": 1,",
+                                "\t\t\"next_banknote_rain\": 1524375434,",
+                                "\t\t\"event_rewards_list\": [{",
+                                "\t\t\t\"contents\": \"在幸运大转盘中获得500M本地通用流量。\",",
+                                "\t\t\t\"user_nick_name\": \"想起床的提子\"",
+                                "\t\t}],",
+                                "\t\t\"city_name\": \"磁县\"",
+                                "\t}",
+                                "}"
+                                ]
+                       },
+                       "listen": "test"
+                       }
+                       ],
+             "request": {
+             "body": {},
+             "method": "POST",
+             "header": [],
+             "url": {
+             "raw": "https://super.api.yoawo.com/Api/system_info?token=Myiw01x6N8TIyOTAzNTMx",
+             "path": [
+                      "Api",
+                      "system_info"
+                      ],
+             "query": [
+                       {
+                       "key": "token",
+                       "value": "Myiw01x6N8TIyOTAzNTMx",
+                       "desc": "用户登录token"
+                       }
+                       ],
+             "protocol": "https",
+             "host": [
+                      "super",
+                      "api",
+                      "yoawo",
+                      "com"
+                      ]
+             }
+             }
+             },
+             {
+             "name": "6、微信登录授权",
+             "request": {
+             "body": {},
+             "method": "POST",
+             "header": [],
+             "url": {
+             "raw": "https://super.api.yoawo.com/wx/wx_auth",
+             "path": [
+                      "wx",
+                      "wx_auth"
+                      ],
+             "protocol": "https",
+             "host": [
+                      "super",
+                      "api",
+                      "yoawo",
+                      "com"
+                      ]
+             }
+             },
+             "response": []
+             },
+             {
+             "response": [],
+             "name": "9、开放城市列表",
+             "event": [
+                       {
+                       "script": {
+                       "id": "33d1c12f-515b-4e14-bb55-217704f4c107",
+                       "type": "text/javascript",
+                       "exec": [
+                                ""
+                                ]
+                       },
+                       "listen": "test"
+                       }
+                       ],
+             "request": {
+             "body": {},
+             "method": "POST",
+             "header": [],
+             "url": {
+             "raw": "https://super.api.yoawo.com/Api/open_city",
+             "path": [
+                      "Api",
+                      "open_city"
+                      ],
+             "protocol": "https",
+             "host": [
+                      "super",
+                      "api",
+                      "yoawo",
+                      "com"
+                      ]
+             }
+             }
+             },
+             {
+             "name": "23、上传图片到OSS",
+             "request": {
+             "body": {
+             "mode": "formdata",
+             "formdata": [
+                          {
+                          "equals": true,
+                          "value": "Myiw01x6N8TIyOTAzNTMx",
+                          "key": "token",
+                          "desc": "用户登录token"
+                          },
+                          {
+                          "key": "user_avatar_img[]",
+                          "type": "file",
+                          "desc": ""
+                          }
+                          ]
+             },
+             "method": "POST",
+             "header": [
+                        {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                        }
+                        ],
+             "url": {
+             "raw": "http://super.duidui.com/Api/upload_img_multi?token=Myiw01x6N8TIyOTAzNTMx&user_avatar_img[]",
+             "path": [
+                      "Api",
+                      "upload_img_multi"
+                      ],
+             "query": [
+                       {
+                       "key": "token",
+                       "value": "Myiw01x6N8TIyOTAzNTMx",
+                       "desc": "用户登录token"
+                       },
+                       {
+                       "key": "user_avatar_img[]",
+                       "value": null,
+                       "desc": "form 表单域文件名称"
+                       }
+                       ],
+             "protocol": "http",
+             "host": [
+                      "super",
+                      "duidui",
+                      "com"
+                      ]
+             }
+             },
+             "response": []
+             },
+             {
+             "name": "24、小程序二维码(圆形、方形)",
+             "request": {
+             "body": {},
+             "method": "POST",
+             "header": [],
+             "url": {
+             "raw": "https://super.api.yoawo.com/wx/qrcode?login_token&path&width&code_type",
+             "path": [
+                      "wx",
+                      "qrcode"
+                      ],
+             "query": [
+                       {
+                       "key": "login_token",
+                       "value": null,
+                       "desc": "用户登录token"
+                       },
+                       {
+                       "key": "path",
+                       "value": null
+                       },
+                       {
+                       "key": "width",
+                       "value": null
+                       },
+                       {
+                       "key": "code_type",
+                       "value": null,
+                       "desc": "//a 圆形  c 方形"
+                       }
+                       ],
+             "protocol": "https",
+             "host": [
+                      "super",
+                      "api",
+                      "yoawo",
+                      "com"
+                      ]
+             }
+             },
+             "response": []
+             },
+             {
+             "name": "25、app登录",
+             "request": {
+             "body": {},
+             "method": "POST",
+             "header": [],
+             "url": {
+             "raw": "https://super.api.yoawo.com/wx/wx_app_auth?gender&avatarUrl&nickName&union_id",
+             "path": [
+                      "wx",
+                      "wx_app_auth"
+                      ],
+             "query": [
+                       {
+                       "key": "gender",
+                       "value": null,
+                       "desc": "0-女，1-男"
+                       },
+                       {
+                       "key": "avatarUrl",
+                       "value": null
+                       },
+                       {
+                       "key": "nickName",
+                       "value": null
+                       },
+                       {
+                       "key": "union_id",
+                       "value": null
+                       }
+                       ],
+             "protocol": "https",
+             "host": [
+                      "super",
+                      "api",
+                      "yoawo",
+                      "com"
+                      ]
+             }
+             },
+             "response": []
+             },
+             {
+             "name": "我的",
+             "request": {
+             "body": {},
+             "method": "GET",
+             "header": [],
+             "url": {
+             "raw": ""
+             }
+             },
+             "response": []
+             }
+             ]
+}
